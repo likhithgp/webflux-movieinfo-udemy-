@@ -1,0 +1,48 @@
+spring:
+  profiles:
+    active: local
+server:
+  port: 8090
+---
+spring:
+  config:
+    activate:
+      on-profile:
+        - local
+
+  data:
+    mongodb:
+      host: localhost
+      port: 27017
+      database: test
+
+---
+
+spring:
+  config:
+    activate:
+      on-profile:
+        - non-prod
+
+  data:
+    mongodb:
+      host: localhost
+      port: 27017
+      database: test
+---
+spring:
+  config:
+    activate:
+      on-profile:
+        - prod
+
+  data:
+    mongodb:
+      host: localhost
+      port: 27017
+      database: test
+
+---
+logging:
+  level:
+    root: debug

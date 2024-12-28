@@ -1,0 +1,15 @@
+spring:
+  profiles:
+    active: local
+  test:
+    context:
+      failure:
+        threshold: 5
+server:
+  port: 8082
+
+restClient:
+  moviesInfoUrl: http://localhost:8090/info/v1/movie
+  reviewUrl: http://localhost:8081/v1/reviews
+
+
